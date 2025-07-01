@@ -1,0 +1,37 @@
+<div style="position: relative; width: 800px; height: 600px; background-color: #ddd;">
+    <img id="animal" src="배경제거된URL" style="position: absolute; top: 200px; left: 300px; width: 200px; cursor: grab;">
+</div>
+
+<script>
+const animal = document.getElementById('animal');
+let isDragging = false;
+let offsetX = 0;
+let offsetY = 0;
+
+animal.addEventListener('mousedown', function(e) {
+    isDragging = true;
+    offsetX = e.clientX - animal.offsetLeft;
+    offsetY = e.clientY - animal.offsetTop;
+    animal.style.cursor = 'grabbing';
+});
+
+document.addEventListener('mousemove', function(e) {
+    if (isDragging) {
+        animal.style.left = (e.clientX - offsetX) + 'px';
+        animal.style.top = (e.clientY - offsetY) + 'px';
+    }
+});
+
+document.addEventListener('mouseup', function() {
+    isDragging = false;
+    animal.style.cursor = 'grab';
+});
+
+animal.addEventListener('mouseover', function() {
+    animal.style.transform = 'scale(1.05)';
+});
+
+animal.addEventListener('mouseout', function() {
+    animal.style.transform = 'scale(1)';
+});
+</script>
