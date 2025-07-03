@@ -290,3 +290,29 @@ body.portfolio-page {
   color: white;
   cursor: pointer;
 }
+.post_apocalypse-hero {
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px;
+}
+
+.image-block {
+  text-align: center;
+}
+
+.image-block img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid #444;
+}
+
+.image-block p {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #ccc;
+  font-family: 'Noto Sans KR', sans-serif;
+}
